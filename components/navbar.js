@@ -49,6 +49,11 @@ class CustomNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = navbarHtml;
 
+    // re-render feather icons after navbar loads
+    if (window.feather) {
+      window.feather.replace();
+    }
+
     const toggle = this.querySelector('#mobile-toggle');
     const mobile = this.querySelector('#mobile-menu');
     if (toggle && mobile) {
