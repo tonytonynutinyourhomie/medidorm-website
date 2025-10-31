@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
+<!-- Hidden dummy form for Netlify build detection -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+</form>
+
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Navbar -->
