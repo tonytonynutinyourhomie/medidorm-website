@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Medidorm Limited</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="Contact Medidorm Limited for service enquiries, partnerships, or general support.">
+  
+  <!-- ✅ Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { medblue: '#005EB8' }
+        }
+      }
+    }
+  </script>
+  
   <link rel="stylesheet" href="style.css">
-
-  <!-- ✅ Add Feather Icons before your components -->
   <script src="https://unpkg.com/feather-icons"></script>
-
-  <!-- Your existing scripts -->
-  <script defer src="script.js"></script>
 </head>
 
+<body class="bg-white text-gray-800">
 
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- ✅ Hidden dummy form (Netlify detection fix) -->
+  <!-- ✅ Hidden Netlify Detection Form -->
   <form name="contact" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="name">
     <input type="email" name="email">
@@ -25,54 +32,57 @@
     <textarea name="message"></textarea>
   </form>
 
-  <!-- Navbar -->
+  <!-- ✅ Navbar -->
   <custom-navbar></custom-navbar>
 
-  <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-80" 
-    style="background-image: url('Violences contre les médecins.jpeg');">
+  <!-- ✅ Hero Section -->
+  <section class="relative bg-cover bg-center h-80" style="background-image: url('Violences contre les médecins.jpeg');">
     <div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center text-center px-4">
-      <div>
+      <div data-animate>
         <h1 class="text-white text-4xl font-bold mb-2">Contact Medidorm Limited</h1>
-        <p class="text-white max-w-2xl mx-auto">
+        <p class="text-white max-w-2xl mx-auto text-lg">
           We’re here to answer your questions and provide more information about our services.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Info -->
-  <section class="py-12 px-6 md:px-20 bg-white">
-    <div class="text-center mb-10">
-      <h2 class="inline-block text-3xl font-semibold text-blue-700 underline-draw">
+  <!-- ✅ Contact Info Section -->
+  <section class="py-16 px-6 md:px-20 bg-white">
+    <div class="text-center mb-12" data-animate>
+      <h2 class="inline-block text-3xl font-semibold text-medblue border-b-4 border-medblue pb-2">
         We’d Love to Hear from You
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10" data-animate>
+    <div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
       
-      <!-- Contact Details -->
-      <div class="space-y-5">
-        <p>For enquiries or service information, reach us using the details below or send a message through our contact form.</p>
+      <!-- Left Info -->
+      <div class="space-y-5 text-gray-700 leading-relaxed" data-animate>
+        <p>
+          For enquiries or service information, reach us using the details below 
+          or send a message through our contact form.
+        </p>
         <div class="space-y-4">
-          <p><strong>📍 Registered Office:</strong><br>88 Mayfair Road, Dartford, England, DA1 5AQ</p>
-          <p><strong>🏢 Branch Office:</strong><br>23 Walter Close, Great Glen, Leicester, England, LE8 9AF</p>
-          <p><strong>☎ Phone:</strong> 0116 207 2068</p>
-          <p><strong>📱 Mobile:</strong> 07359 248 178</p>
-          <p><strong>📧 Email:</strong> 
-            <a href="mailto:mediform@mail.com" class="text-blue-600 hover:underline">mediform@mail.com</a>
+          <p><i data-feather="map-pin" class="inline w-5 h-5 text-medblue"></i> <strong>Registered Office:</strong><br>88 Mayfair Road, Dartford, England, DA1 5AQ</p>
+          <p><i data-feather="home" class="inline w-5 h-5 text-medblue"></i> <strong>Branch Office:</strong><br>23 Walter Close, Great Glen, Leicester, England, LE8 9AF</p>
+          <p><i data-feather="phone" class="inline w-5 h-5 text-medblue"></i> <strong>Phone:</strong> 0116 207 2068</p>
+          <p><i data-feather="smartphone" class="inline w-5 h-5 text-medblue"></i> <strong>Mobile:</strong> 07359 248 178</p>
+          <p><i data-feather="mail" class="inline w-5 h-5 text-medblue"></i> <strong>Email:</strong> 
+            <a href="mailto:mediform@mail.com" class="text-blue-700 hover:underline">mediform@mail.com</a>
           </p>
         </div>
       </div>
 
-      <!-- ✅ Visible Contact Form -->
+      <!-- ✅ Contact Form -->
       <form 
         name="contact" 
         method="POST" 
         data-netlify="true" 
         netlify-honeypot="bot-field"
         id="contact-form"
-        class="bg-gray-100 p-6 rounded-2xl shadow-lg space-y-4"
+        class="bg-gray-50 p-8 rounded-2xl shadow-xl space-y-5 border border-gray-200"
+        data-animate
       >
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden">
@@ -81,25 +91,25 @@
 
         <div>
           <label class="block text-sm font-medium mb-1">Full Name</label>
-          <input type="text" name="name" required class="w-full p-3 rounded-lg border">
+          <input type="text" name="name" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-medblue focus:outline-none">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Email</label>
-          <input type="email" name="email" required class="w-full p-3 rounded-lg border">
+          <input type="email" name="email" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-medblue focus:outline-none">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Subject</label>
-          <input type="text" name="subject" required class="w-full p-3 rounded-lg border">
+          <input type="text" name="subject" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-medblue focus:outline-none">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Message</label>
-          <textarea name="message" rows="4" required class="w-full p-3 rounded-lg border"></textarea>
+          <textarea name="message" rows="4" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-medblue focus:outline-none"></textarea>
         </div>
 
-        <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition">
+        <button type="submit" class="w-full bg-medblue text-white py-3 rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl">
           Send Message
         </button>
 
@@ -110,38 +120,47 @@
     </div>
   </section>
 
-  <!-- Map -->
-  <section class="mt-12">
+  <!-- ✅ Google Map -->
+  <section class="mt-12" data-animate>
     <iframe src="https://www.google.com/maps?q=Leicester,+UK&output=embed" class="w-full h-80 border-0"></iframe>
   </section>
 
-  <!-- Footer -->
-  <div id="footer"></div>
+  <!-- ✅ Footer -->
+  <custom-footer></custom-footer>
 
-  <!-- Components -->
+  <!-- ✅ Components & Scripts -->
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
-
-  <!-- ✅ Netlify submission handler -->
   <script>
-  document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
+    feather.replace();
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        body: formData
+    // Smooth fade-in animations
+    const animateEls = document.querySelectorAll("[data-animate]");
+    const onScroll = () => {
+      animateEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) el.classList.add("opacity-100", "translate-y-0");
       });
-      form.reset();
-      const successMsg = document.getElementById("form-success");
-      successMsg.classList.remove("hidden");
-      setTimeout(() => successMsg.classList.add("hidden"), 4000);
-    } catch (error) {
-      alert("❌ Something went wrong. Please try again later.");
-    }
-  });
+    };
+    animateEls.forEach(el => el.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700"));
+    document.addEventListener("scroll", onScroll);
+    onScroll();
+
+    // ✅ Netlify submission
+    document.getElementById("contact-form").addEventListener("submit", async e => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      try {
+        await fetch("/", { method: "POST", body: data });
+        form.reset();
+        const msg = document.getElementById("form-success");
+        msg.classList.remove("hidden");
+        setTimeout(() => msg.classList.add("hidden"), 4000);
+      } catch {
+        alert("❌ Something went wrong. Please try again later.");
+      }
+    });
   </script>
 </body>
 </html>
