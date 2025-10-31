@@ -50,52 +50,50 @@
         </div>
       </div>
 
-      <!-- Contact Form -->
-   <form 
-   name="contact" 
-   method="POST" 
-   data-netlify="true"
-   netlify-honeypot="bot-field"
-   class="bg-gray-100 p-6 rounded-2xl shadow-lg space-y-4" 
-   data-animate 
-   data-animate-delay="100"
-   >
-   <input type="hidden" name="form-name" value="contact">
-   <p class="hidden">
-    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-   </p>
+      <!-- ✅ Contact Form -->
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        netlify-honeypot="bot-field"
+        id="contact-form"
+        class="bg-gray-100 p-6 rounded-2xl shadow-lg space-y-4"
+      >
+        <input type="hidden" name="form-name" value="contact">
 
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+        </p>
 
         <div>
           <label class="block text-sm font-medium mb-1">Full Name</label>
-          <input type="text" name="name" placeholder="Your name" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+          <input type="text" name="name" required class="w-full p-3 rounded-lg border">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Email</label>
-          <input type="email" name="email" placeholder="you@example.com" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+          <input type="email" name="email" required class="w-full p-3 rounded-lg border">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Subject</label>
-          <input type="text" name="subject" placeholder="Subject" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+          <input type="text" name="subject" required class="w-full p-3 rounded-lg border">
         </div>
 
         <div>
           <label class="block text-sm font-medium mb-1">Message</label>
-          <textarea name="message" placeholder="Your message..." rows="4" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500"></textarea>
+          <textarea name="message" rows="4" required class="w-full p-3 rounded-lg border"></textarea>
         </div>
 
         <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition">
           Send Message
         </button>
 
-        <!-- Hidden success message -->
+        <!-- ✅ Hidden success message -->
         <p id="form-success" class="hidden text-green-600 font-medium text-center mt-4">
           ✅ Message sent! We'll get back to you soon.
         </p>
       </form>
-
     </div>
   </section>
 
@@ -111,29 +109,26 @@
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
 
-  <!-- Netlify Form Handler -->
+  <!-- ✅ Netlify Form Submission Script -->
   <script>
-    const form = document.querySelector('form[name="contact"]');
-    const successMsg = document.getElementById('form-success');
+  document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      try {
-        await fetch('/', {
-          method: 'POST',
-          body: formData
-        });
-
-        form.reset();
-        successMsg.classList.remove('hidden');
-        setTimeout(() => successMsg.classList.add('hidden'), 4000);
-      } catch (err) {
-        alert('❌ Something went wrong. Please try again later.');
-      }
-    });
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: formData,
+      });
+      form.reset();
+      const successMsg = document.getElementById("form-success");
+      successMsg.classList.remove("hidden");
+      setTimeout(() => successMsg.classList.add("hidden"), 4000);
+    } catch (error) {
+      alert("❌ Something went wrong. Please try again later.");
+    }
+  });
   </script>
 
 </body>
