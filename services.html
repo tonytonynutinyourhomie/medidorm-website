@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Medidorm Limited</title>
+  <meta name="description" content="Medidorm provides home support, community wellbeing and family support services across Leicestershire.">
+  <script>
+    tailwind = { theme: { extend: { colors: { medblue:'#005EB8', primary:'#3B82F6', secondary:'#10B981' } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <custom-navbar></custom-navbar>
+
+   <section class="relative bg-cover bg-center h-80" style="background-image: url(Médecin\ généraliste\ _\ la\ consultation\ de\ base\ coûtera\ 30\ euros\ à\ partir\ de\ décembre.jpeg);">
+  <div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-white text-4xl font-bold">Our Services</h1>
+    <h2 class="mt-3 max-w-2xl text-white/90 text-lg">
+       We provide a broad range of non-regulated support services designed to promote independence and wellbeing.
+    </h2>
+  </div>
+  </section>
+
+
+  <main class="container mx-auto px-6 py-12 max-w-6xl space-y-8">
+    <section id="home-support" class="bg-gray-50 p-6 rounded-xl shadow" data-animate>
+      <h2 class="text-2xl font-semibold mb-2">Home Support & Lifestyle Services</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Domestic support (cleaning, laundry, meal prep, errands)</li>
+        <li>Shopping and household organisation</li>
+        <li>Light mobility assistance and escorting to appointments</li>
+        <li>Companionship, conversation, and emotional support</li>
+        <li>Digital and administrative help — online forms, letters, medication reminders</li>
+      </ul>
+    </section>
+
+    <section id="wellbeing" class="bg-white p-6 rounded-xl shadow" data-animate data-animate-delay="80">
+      <h2 class="text-2xl font-semibold mb-2">Community Wellbeing & Preventive Health</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Blood pressure, weight, and wellbeing monitoring visits</li>
+        <li>Nutritional and exercise motivation support</li>
+        <li>Coaching for sleep hygiene, stress reduction, and self-care</li>
+        <li>Medication reminders and adherence support</li>
+        <li>Coordination with GPs or community teams (with consent)</li>
+      </ul>
+    </section>
+
+    <section id="family-support" class="bg-gray-50 p-6 rounded-xl shadow" data-animate data-animate-delay="160">
+      <h2 class="text-2xl font-semibold mb-2">Family & Carer Support</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Respite and sitting services for carers</li>
+        <li>Care coordination and information guidance</li>
+        <li>Support after hospital discharge or recovery</li>
+        <li>Home safety and wellbeing checks</li>
+      </ul>
+    </section>
+
+    <section id="clinical" class="bg-white p-6 rounded-xl shadow" data-animate data-animate-delay="240">
+      <h2 class="text-2xl font-semibold mb-2">Future Clinical Services (Planned for Launch)</h2>
+      <p class="text-gray-700 mb-3">Once independent prescribing qualification is achieved, Medidorm plans to introduce a Private Prescribing and Lifestyle Health Service including:</p>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Private weight management programmes (e.g. GLP-1 therapy)</li>
+        <li>Smoking cessation support</li>
+        <li>Minor illness management (e.g. respiratory, skin, gastrointestinal)</li>
+        <li>Hormone and women’s health wellbeing</li>
+        <li>Medication reviews and deprescribing support</li>
+      </ul>
+      <p class="text-sm text-gray-600 mt-3">All prescribing services will comply with UK professional and legal frameworks under NMC and MHRA regulations.</p>
+    </section>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

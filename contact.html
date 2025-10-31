@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Medidorm Limited</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <custom-navbar></custom-navbar>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-80" 
+    style="background-image: url('Violences contre les médecins.jpeg');">
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center text-center px-4">
+      <div>
+        <h1 class="text-white text-4xl font-bold mb-2">Contact Medidorm Limited</h1>
+        <p class="text-white max-w-2xl mx-auto">
+          We’re here to answer your questions and provide more information about our services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="py-12 px-6 md:px-20 bg-white">
+    <div class="text-center mb-10">
+      <h2 class="inline-block text-3xl font-semibold text-blue-700 underline-draw">
+        We’d Love to Hear from You
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10" data-animate>
+      
+      <!-- Contact Details -->
+      <div class="space-y-5">
+        <p>For enquiries or service information, reach us using the details below or send a message through our contact form.</p>
+        <div class="space-y-4">
+          <p><strong>📍 Registered Office:</strong><br>88 Mayfair Road, Dartford, England, DA1 5AQ</p>
+          <p><strong>🏢 Branch Office:</strong><br>23 Walter Close, Great Glen, Leicester, England, LE8 9AF</p>
+          <p><strong>☎ Phone:</strong> 0116 207 2068</p>
+          <p><strong>📱 Mobile:</strong> 07359 248 178</p>
+          <p><strong>📧 Email:</strong> 
+            <a href="mailto:mediform@mail.com" class="text-blue-600 hover:underline">mediform@mail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        class="bg-gray-100 p-6 rounded-2xl shadow-lg space-y-4" 
+        data-animate 
+        data-animate-delay="100"
+      >
+        <input type="hidden" name="form-name" value="contact">
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Full Name</label>
+          <input type="text" name="name" placeholder="Your name" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Subject</label>
+          <input type="text" name="subject" placeholder="Subject" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Message</label>
+          <textarea name="message" placeholder="Your message..." rows="4" required class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition">
+          Send Message
+        </button>
+
+        <!-- Hidden success message -->
+        <p id="form-success" class="hidden text-green-600 font-medium text-center mt-4">
+          ✅ Message sent! We'll get back to you soon.
+        </p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Map Embed -->
+  <section class="mt-12">
+    <iframe src="https://www.google.com/maps?q=Leicester,+UK&output=embed" class="w-full h-80 border-0"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Components -->
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+
+  <!-- Netlify Form Handler -->
+  <script>
+    const form = document.querySelector('form[name="contact"]');
+    const successMsg = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        await fetch('/', {
+          method: 'POST',
+          body: formData
+        });
+
+        form.reset();
+        successMsg.classList.remove('hidden');
+        setTimeout(() => successMsg.classList.add('hidden'), 4000);
+      } catch (err) {
+        alert('❌ Something went wrong. Please try again later.');
+      }
+    });
+  </script>
+
+</body>
+</html>

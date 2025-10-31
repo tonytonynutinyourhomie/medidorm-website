@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Medidorm — Our Story & Philosophy</title>
+  <meta name="description" content="Medidorm Limited was founded by Stephanie Nwaigwe. We provide person-centred, non-regulated home support and community wellbeing services in Leicester.">
+  <script>
+    tailwind = { theme: { extend: { colors: { medblue:'#005EB8', primary:'#3B82F6', secondary:'#10B981' } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <custom-navbar></custom-navbar>
+
+   <section class="relative bg-cover bg-center h-80" style="background-image: url(about\ us.jpeg);">
+  <div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-white text-4xl font-bold">About Medidorm</h1>
+    <h2 class="mt-3 max-w-2xl text-white/90 text-lg">
+      Caring Support. Professional Standards. Personal Touch.
+    </h2>
+  </div>
+  </section>
+
+  <!-- <header class="pt-28 pb-16 bg-gradient-to-r from-medblue to-primary text-white text-center">
+    <h1 class="text-3xl md:text-4xl font-bold"></h1>
+    <p class="mt-2 text-white/90 max-w-2xl mx-auto"></p>
+  </header> -->
+
+  <main class="container mx-auto px-6 py-12 max-w-6xl">
+    <section class="grid md:grid-cols-2 gap-8 items-center mb-12">
+      <img src="https://images.unsplash.com/photo-1551292831-0231889d8f65?q=80&w=900&auto=format&fit=crop" alt="Medidorm team" class="rounded-2xl shadow-lg" data-animate>
+      <div data-animate data-animate-delay="100">
+        <h2 class="text-2xl font-semibold mb-3 underline-draw ">Our Story</h2>
+        
+        <p class="text-gray-700 mb-4">
+          Medidorm Limited was founded by <strong>Stephanie Nwaigwe</strong>, an experienced Advanced Clinical Practitioner trainee with extensive experience in healthcare leadership and domiciliary care. The company bridges the gap between social care and modern community health — providing holistic, safe, and person-centred support.
+        </p>
+        <a href="services.html" class="inline-block bg-medblue text-white px-4 py-2 rounded-lg">View our services</a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h3 class="text-xl font-semibold mb-3 underline-draw">Our Philosophy</h3>
+      <p class="text-gray-700 mb-4">We believe everyone deserves compassionate, professional care that respects independence, privacy, and cultural identity. Medidorm’s approach blends practical home assistance with proactive wellbeing support — helping clients stay healthy, happy, and connected.</p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 p-6 rounded-xl shadow" data-animate>
+        <h4 class="font-semibold mb-2">Trained & DBS-checked</h4>
+        <p class="text-sm text-gray-600">All staff are trained and vetted to ensure safety and dignity.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-xl shadow" data-animate data-animate-delay="100">
+        <h4 class="font-semibold mb-2">Person-centred care</h4>
+        <p class="text-sm text-gray-600">Support tailored to individual needs, preferences and culture.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-xl shadow" data-animate data-animate-delay="200">
+        <h4 class="font-semibold mb-2">Continuous improvement</h4>
+        <p class="text-sm text-gray-600">We seek feedback and improve services through professional governance.</p>
+      </div>
+    </section>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

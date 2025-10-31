@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medidorm Limited | Caring Support. Professional Standards. Personal Touch.</title>
+  <meta name="description" content="Medidorm Limited provides professional home care, wellbeing, and private prescribing services in Leicester. From companionship to weight management, we help you live well at home." />
+  <meta name="keywords" content="domiciliary care Leicester, home support Leicestershire, non-CQC care Leicester, private community care, lifestyle support Leicester, independent prescribing Leicester">
+  <!-- Tailwind config before CDN -->
+  <script>
+    tailwind = {
+      theme: {
+        extend: {
+          colors: {
+            medblue: '#005EB8',
+            primary: '#3B82F6',
+            secondary: '#10B981'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- navbar (custom element injected) -->
+  <custom-navbar></custom-navbar>
+
+  <!-- HERO -->
+  <header class="relative h-screen min-h-[520px] flex items-center">
+    <img src="hospital home.jpeg" alt="Caregiver assisting an adult at home" class="absolute inset-0 w-full h-full object-cover brightness-75">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/10"></div>
+
+    <div class="container mx-auto relative z-10 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg mb-4" data-animate>Empowering Independence. Enhancing Wellbeing.</h1>
+        <p class="text-lg md:text-xl text-white/90 mb-8" data-animate data-animate-delay="100">
+          Medidorm Limited is a trusted Leicester-based care and wellbeing company supporting adults to live confidently and independently in their own homes. We deliver high-quality, non-regulated home support, lifestyle management, and community wellbeing services — combining professional healthcare insight with genuine compassion.
+        </p>
+        <div class="flex justify-center gap-4 flex-col sm:flex-row" data-animate data-animate-delay="200">
+          <a href="services.html" class="inline-block bg-secondary text-white font-semibold py-3 px-6 rounded-lg shadow hover:opacity-95">Our Services</a>
+          <a href="contact.html" class="inline-block bg-white text-medblue font-semibold py-3 px-6 rounded-lg shadow hover:opacity-95">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick intro / Vision -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      
+      <div data-animate>
+        <h2 class="text-3xl font-semibold text-blue-700 mb-4 underline-draw">
+          Medidorm Limited
+        </h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Whether you need everyday practical help, companionship, or support managing long-term conditions, Medidorm offers flexible care built around your life.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          <strong>Our Vision:</strong> To transform community-based support by integrating practical home care with preventive health, wellbeing, and independent prescribing services.
+        </p>
+      </div>
+
+      <div data-animate data-animate-delay="100">
+        <div class="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1">
+          <h3 class="font-semibold text-lg text-medblue mb-2">What We Do</h3>
+          <p class="text-gray-600 leading-relaxed">
+            High-quality, non-regulated home support, lifestyle management, and community wellbeing visits across Leicestershire — combining professional insight with compassion.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Services preview (cards) -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-6xl text-center">
+      <h3 class="text-2xl font-semibold mb-6 underline-draw" data-animate>Our Services</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl p-6 shadow" data-animate data-animate-delay="80">
+          <img src="New Opportunities & Experiences - Online Admission Application Form.jpeg" alt="home support" class="rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Home Support & Lifestyle Services</h4>
+          <p class="text-sm text-gray-600">Domestic support, shopping, light mobility assistance, companionship, and digital/administrative help.</p>
+        </article>
+        <article class="bg-white rounded-xl p-6 shadow" data-animate data-animate-delay="160">
+          <img src="Revel in care curated to your distinct needs_.jpeg" alt="wellbeing" class="rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Community Wellbeing & Preventive Health</h4>
+          <p class="text-sm text-gray-600">Blood pressure & weight monitoring, nutrition support, sleep & stress coaching, and medication reminders.</p>
+        </article>
+        <article class="bg-white rounded-xl p-6 shadow" data-animate data-animate-delay="240">
+          <img src="25 Words Most 2-Year-Olds Should Know.jpeg" alt="family support" class="rounded-lg mb-4">
+          <h4 class="font-semibold mb-2">Family & Carer Support</h4>
+          <p class="text-sm text-gray-600">Respite, care coordination, discharge support and home safety & wellbeing checks.</p>
+        </article>
+      </div>
+      <div class="mt-8">
+        <a href="services.html" class="inline-block text-medblue font-medium">View all services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6 max-w-6xl text-center">
+
+    <!-- Section Heading -->
+    <h3 class="text-3xl font-semibold text-blue-700 mb-12 inline-block underline-draw" data-animate>
+      Why Choose Medidorm
+    </h3>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1" data-animate>
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Clinical Expertise" class="w-12 mb-4">
+          <h4 class="font-semibold text-lg mb-2 text-medblue">Led by Clinical Expertise</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Founded and led by an Advanced Clinical Practitioner trainee with prescribing expertise and healthcare leadership experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1" data-animate data-animate-delay="100">
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Ethical & Transparent" class="w-12 mb-4">
+          <h4 class="font-semibold text-lg mb-2 text-medblue">Ethical & Transparent</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Clear policies, DBS checks, insurance, and governance that mirror CQC fundamentals.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1" data-animate data-animate-delay="200">
+        <div class="flex flex-col items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/3449/3449670.png" alt="Holistic & Flexible" class="w-12 mb-4">
+          <h4 class="font-semibold text-lg mb-2 text-medblue">Holistic & Flexible</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We combine practical home assistance with wellbeing services to help people stay independent, safe, and connected.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="py-12 bg-gradient-to-r from-medblue to-primary text-blue-600">
+    <div class="container mx-auto px-6 max-w-6xl text-center">
+      <h4 class="text-xl font-semibold mb-2 text-blue-600">Ready to learn more about our services?</h4>
+      <p class="mb-4 text-blue-600" >Call us on <a href="tel:01162072068 text-blue-600" class="underline text-blue-600 ">0116 207 2068</a> or email <a href="mailto:mediform@mail.com" class="underline text-blue-600">mediform@mail.com</a>.</p>
+      <a href="contact.html" class="inline-block bg-white text-medblue px-5 py-3 rounded-lg font-semibold text-blue-600">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- footer (injected) -->
+  <custom-footer></custom-footer>
+
+  <!-- components and scripts -->
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="script.js" defer></script>
+  <script>/* feather will be replaced in script.js */</script>
+</body>
+</html>

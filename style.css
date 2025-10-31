@@ -1,0 +1,67 @@
+/* style.css - small extras for Medidorm site */
+
+/* root palette if you want CSS custom properties later */
+:root {
+  --medblue: #005EB8;
+  --primary: #3B82F6;
+  --secondary: #10B981;
+}
+
+/* simple container helper (optional) */
+.container { max-width: 1280px; margin-left:auto; margin-right:auto; }
+
+/* animate-on-enter helpers */
+[data-animate] { opacity: 0; transform: translateY(8px); transition: all 500ms cubic-bezier(.2,.9,.2,1); }
+[data-animate].in-view { opacity: 1; transform: translateY(0); }
+
+/* delay attribute parser (script uses data-animate-delay in ms) */
+
+/* hero text readability */
+h1, h2, h3 { word-break: keep-all; }
+
+/* focus outline for accessibility */
+:focus { outline: 3px solid rgba(37,99,235,0.18); outline-offset: 2px; }
+
+/* modal helpers (if you add any later) */
+#founder-modal { display:none; }
+
+/* small responsive tweaks */
+@media (min-width:1024px) {
+  .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+/* Base underline setup */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- Animated underline for headings --- */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px; /* distance from text */
+  width: 0;
+  height: 3px;
+  background-color: #2563eb; /* Tailwind blue-600 */
+  border-radius: 4px;
+  animation: drawline 0.8s ease-out forwards;
+  animation-delay: 0.3s; /* optional: delay to match section animation */
+}
+
+@keyframes drawline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
