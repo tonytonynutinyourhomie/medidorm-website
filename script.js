@@ -1,54 +1,25 @@
-// script.js - simple animation helpers, feather init, accessibility helpers
+// 🌟 Page fade-in when loaded
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+  feather.replace(); // if using Feather icons
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-  // replace feather icons
-  if (window.feather) feather.replace();
+// 🌟 Fade-in on scroll for elements with [data-animate]
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll("[data-animate]");
 
-  // animate elements into view using IntersectionObserver
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting) {
-        el.classList.add('in-view');
-        // optional delay read from attribute
-        const d = el.getAttribute('data-animate-delay');
-        if (d) {
-          el.style.transitionDelay = (parseInt(d) / 1000) + 's';
-        }
-        observer.unobserve(el);
+  function revealOnScroll() {
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100 && !el.classList.contains("visible")) {
+        const delay = el.dataset.animateDelay ? parseInt(el.dataset.animateDelay) : 0;
+        setTimeout(() => {
+          el.classList.add("visible");
+        }, delay);
       }
     });
-  }, { threshold: 0.12 });
+  }
 
-  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-  // navbar background handled in components/navbar.js (it listens to scroll)
-
-  // simple keyboard accessibility: close mobile menu with Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const mm = document.getElementById('mobile-menu');
-      if (mm && !mm.classList.contains('hidden')) mm.classList.add('hidden');
-    }
-  });
-
-  // prefilling or small UI niceties could go here
+  revealOnScroll();
+  window.addEventListener("scroll", revealOnScroll);
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const underlines = document.querySelectorAll(".underline-draw");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  underlines.forEach((el) => observer.observe(el));
-});
-
