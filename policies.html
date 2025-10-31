@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Policies & Governance — Medidorm Limited</title>
   <meta name="description" content="Governance, safeguarding, GDPR and quality frameworks for Medidorm Limited.">
+
+  <!-- Tailwind config -->
   <script>
     tailwind = { theme: { extend: { colors: { medblue:'#005EB8' } } } }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Add Feather Icons here -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- ✅ Load your scripts after -->
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body class="bg-white text-gray-800">
 
   <custom-navbar></custom-navbar>
